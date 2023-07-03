@@ -2,7 +2,7 @@ type ResProps = {
   data: Record<string, string>[];
 };
 
-const FetchCards = () => {
+export const FetchCards = () => {
   return fetch(`https://to-do-list-classes-production.up.railway.app/notes/`, {
     cache: "no-store",
   })
@@ -12,7 +12,6 @@ const FetchCards = () => {
 
 export default async function ListOfCards() {
   const cards = await FetchCards();
-  console.log("cards", cards);
 
   return (
     <div className={"flex flex-col gap-3 full"}>
